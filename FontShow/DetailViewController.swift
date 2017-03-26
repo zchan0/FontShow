@@ -15,9 +15,11 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = self.detailItem {
+        if let name = self.fontName {
             if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+                label.text = "汉体书写信息技术标准相容\n档案下载使用界面简单\n支援服务升级资讯专业制作\n创意空间快速无线上网\n㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩\nAaBbCc ＡａＢｂＣｃ"
+                label.font = UIFont(name: name, size: 20)
+                label.numberOfLines = 0
             }
         }
     }
@@ -33,7 +35,7 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: NSDate? {
+    var fontName: String? {
         didSet {
             // Update the view.
             self.configureView()
